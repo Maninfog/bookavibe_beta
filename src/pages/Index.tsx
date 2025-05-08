@@ -63,9 +63,31 @@ const Index = () => {
     });
   };
 
-  const handleBookingSubmit = (data: BookingData) => {
-    setBookingData(data);
-    setShowConfirmation(true);
+const handleBookingSubmit = async (data: BookingData) => {
+  setBookingData(data);
+  setShowConfirmation(true);
+
+  // Send email via Formspree
+  await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      name: data.name,
+      email: data.email,
+      message: data.message,
+      activity: selectedActivityData?.title || '',
+      date: data.date.toDateString()
+    })
+  });
+
+  // Optional: show a toast
+  toast("📬 Vibe booked!", {
+    description: "You'll get a confirmation email soon.",
+  });
+};
   };
 
   const selectedActivityData = activities.find(a => a.id === selectedActivity);
