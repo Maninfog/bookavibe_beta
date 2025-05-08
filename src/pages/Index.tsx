@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Pizza, MapPin, Bike, Walk, List } from 'lucide-react';
+import { Pizza, MapPin, Bike, FootprintsIcon, List, Terminal } from 'lucide-react';
 import { toast } from "@/components/ui/sonner";
 
 import Header from '@/components/Header';
@@ -35,7 +34,7 @@ const activities = [
     title: 'Walk n talk',
     description: 'A casual stroll with great conversation, no pressure, just vibes.',
     color: 'linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%)',
-    icon: <Walk className="h-6 w-6 text-white" />
+    icon: <FootprintsIcon className="h-6 w-6 text-white" />
   },
   {
     id: 5,
