@@ -68,7 +68,7 @@ const handleBookingSubmit = async (data: BookingData) => {
   setShowConfirmation(true);
 
   // Send email via Formspree
-  await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+  await fetch("https://formspree.io/f/movdwyad", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -83,10 +83,8 @@ const handleBookingSubmit = async (data: BookingData) => {
     })
   });
 
-  // Optional: show a toast
   toast("📬 Vibe booked!", {
     description: "You'll get a confirmation email soon.",
-  });
 };
   };
 
