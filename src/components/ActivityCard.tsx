@@ -1,7 +1,7 @@
-
 import React from 'react';
 
 interface ActivityCardProps {
+  id?: string;
   title: string;
   description: string;
   color: string;
@@ -12,6 +12,7 @@ interface ActivityCardProps {
 }
 
 const ActivityCard: React.FC<ActivityCardProps> = ({
+  id,
   title,
   description,
   color,
@@ -22,7 +23,10 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
 }) => {
   return (
     <div 
-      className={`activity-card activity-shadow transition-all duration-300 ${selected ? 'ring-2 ring-white ring-offset-4 ring-offset-background scale-105' : ''} ${fullWidth ? 'md:col-span-2' : ''}`}
+      id={id}
+      className={`activity-card activity-shadow transition-all duration-300 relative ${
+        selected ? 'ring-2 ring-white ring-offset-4 ring-offset-background scale-105' : ''
+      } ${fullWidth ? 'md:col-span-2' : ''}`}
       style={{ background: color }}
       onClick={onClick}
     >

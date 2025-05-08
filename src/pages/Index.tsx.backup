@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Pizza, MapPin, Bike, FootprintsIcon, List, Terminal } from 'lucide-react';
 import { toast } from "@/components/ui/sonner";
 
@@ -54,32 +54,12 @@ const Index = () => {
   const [selectedActivity, setSelectedActivity] = useState<string | null>(null);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [bookingData, setBookingData] = useState<BookingData | null>(null);
-  const formRef = useRef<HTMLDivElement>(null);
-  const [formPosition, setFormPosition] = useState({ top: 0, left: 0, width: 0 });
-  const [isFormVisible, setIsFormVisible] = useState(false);
 
   const handleSelectActivity = (id: string) => {
     setSelectedActivity(id);
-    setIsFormVisible(true);
-    
-    // Scroll to form after a small delay to allow for animation
-    setTimeout(() => {
-      const formElement = document.getElementById('booking-form');
-      if (formElement) {
-        formElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }, 100);
-
     toast("Activity selected!", {
       description: `You've selected ${activities.find(a => a.id === id)?.title}`,
     });
-  };
-
-  const handleCloseForm = () => {
-    setIsFormVisible(false);
-    setTimeout(() => {
-      setSelectedActivity(null);
-    }, 500); // Match the transition duration
   };
 
   const handleBookingSubmit = (data: BookingData) => {
@@ -107,7 +87,6 @@ const Index = () => {
           {activities.map(activity => (
             <ActivityCard
               key={activity.id}
-              id={`activity-${activity.id}`}
               title={activity.title}
               description={activity.description}
               color={activity.color}
@@ -120,18 +99,11 @@ const Index = () => {
         </div>
         
         {selectedActivity !== null && (
-          <div 
-            id="booking-form"
-            ref={formRef}
-            className={`transition-all duration-500 ease-in-out max-w-md mx-auto ${
-              isFormVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-          >
+          <div className="max-w-md mx-auto">
             <BookingForm 
               activity={selectedActivityData?.title || ''} 
               activityId={selectedActivity}
               onSubmit={handleBookingSubmit}
-              onClose={handleCloseForm}
             />
           </div>
         )}
