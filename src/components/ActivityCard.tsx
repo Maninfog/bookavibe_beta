@@ -8,6 +8,7 @@ interface ActivityCardProps {
   icon: React.ReactNode;
   selected: boolean;
   onClick: () => void;
+  fullWidth?: boolean;
 }
 
 const ActivityCard: React.FC<ActivityCardProps> = ({
@@ -16,11 +17,12 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
   color,
   icon,
   selected,
-  onClick
+  onClick,
+  fullWidth = false
 }) => {
   return (
     <div 
-      className={`activity-card activity-shadow transition-all duration-300 ${selected ? 'ring-2 ring-white ring-offset-4 ring-offset-background scale-105' : ''}`}
+      className={`activity-card activity-shadow transition-all duration-300 ${selected ? 'ring-2 ring-white ring-offset-4 ring-offset-background scale-105' : ''} ${fullWidth ? 'md:col-span-2' : ''}`}
       style={{ background: color }}
       onClick={onClick}
     >

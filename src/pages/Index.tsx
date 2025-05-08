@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Pizza, MapPin, Bike, FootprintsIcon, List, Terminal } from 'lucide-react';
 import { toast } from "@/components/ui/sonner";
@@ -13,35 +14,40 @@ const activities = [
     title: 'Margherita with Olives',
     description: 'Share a delicious pizza with the perfect crispy crust and talk about life.',
     color: 'linear-gradient(135deg, #FF9966 0%, #FF5E62 100%)',
-    icon: <Pizza className="h-6 w-6 text-white" />
+    icon: <Pizza className="h-6 w-6 text-white" />,
+    fullWidth: false
   },
   {
     id: 2,
     title: 'Hike',
     description: 'Explore nature trails and enjoy fresh air while getting some exercise.',
     color: 'linear-gradient(135deg, #56ab2f 0%, #a8e063 100%)',
-    icon: <MapPin className="h-6 w-6 text-white" />
+    icon: <MapPin className="h-6 w-6 text-white" />,
+    fullWidth: false
   },
   {
     id: 3,
     title: 'Bike',
     description: 'Cycle through scenic routes and discover hidden spots in the city.',
     color: 'linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%)',
-    icon: <Bike className="h-6 w-6 text-white" />
+    icon: <Bike className="h-6 w-6 text-white" />,
+    fullWidth: false
   },
   {
     id: 4,
     title: 'Walk n talk',
     description: 'A casual stroll with great conversation, no pressure, just vibes.',
     color: 'linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%)',
-    icon: <FootprintsIcon className="h-6 w-6 text-white" />
+    icon: <FootprintsIcon className="h-6 w-6 text-white" />,
+    fullWidth: false
   },
   {
     id: 5,
     title: 'Choose your own',
     description: 'Have something else in mind? Suggest your own activity!',
     color: 'linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)',
-    icon: <List className="h-6 w-6 text-white" />
+    icon: <List className="h-6 w-6 text-white" />,
+    fullWidth: true
   }
 ];
 
@@ -88,6 +94,7 @@ const Index = () => {
               icon={activity.icon}
               selected={selectedActivity === activity.id}
               onClick={() => handleSelectActivity(activity.id)}
+              fullWidth={activity.fullWidth}
             />
           ))}
         </div>
