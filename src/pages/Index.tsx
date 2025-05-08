@@ -65,7 +65,7 @@ const Index = () => {
       <main className="container px-4 py-8 mx-auto">
         <div className="max-w-3xl mx-auto mb-12 text-center">
           <h1 className="text-4xl font-bold mb-4 tracking-tight">
-            Book a <span className="text-tech-purple">Vibe</span> with GiGi
+            Book a <span className="text-tech-purple">Vibe</span> with Maxi
           </h1>
           <p className="text-xl text-muted-foreground">
             Choose an activity and let's hang out! Tech edition.
