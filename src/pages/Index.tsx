@@ -99,7 +99,7 @@ const Index = () => {
             Book a <span className="text-tech-purple">Vibe for you</span> <span className="text-2xl align-sub">(and me) 🥸</span>
           </h1>
           <p className="text-xl text-muted-foreground">
-            Choose an activity and let's hang out! Tech edition.
+            Choose an activity and vibe.
           </p>
         </div>
         
