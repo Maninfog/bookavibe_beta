@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Computer, Code, Settings, Terminal, Laptop } from 'lucide-react';
+import { Pizza, MapPin, Bike, Walk, List } from 'lucide-react';
 import { toast } from "@/components/ui/sonner";
 
 import Header from '@/components/Header';
@@ -11,31 +11,38 @@ import ConfirmationModal from '@/components/ConfirmationModal';
 const activities = [
   {
     id: 1,
-    title: 'Code Together',
-    description: 'Pair programming, project collaboration, or just helping each other debug.',
-    color: 'linear-gradient(135deg, #6633FF 0%, #3366FF 100%)',
-    icon: <Code className="h-6 w-6 text-white" />
+    title: 'Margherita with Olives',
+    description: 'Share a delicious pizza with the perfect crispy crust and talk about life.',
+    color: 'linear-gradient(135deg, #FF9966 0%, #FF5E62 100%)',
+    icon: <Pizza className="h-6 w-6 text-white" />
   },
   {
     id: 2,
-    title: 'Tech Coffee Chat',
-    description: 'Grab coffee and discuss the latest tech trends, gadgets, or industry news.',
-    color: 'linear-gradient(135deg, #33CCFF 0%, #3366FF 100%)',
-    icon: <Computer className="h-6 w-6 text-white" />
+    title: 'Hike',
+    description: 'Explore nature trails and enjoy fresh air while getting some exercise.',
+    color: 'linear-gradient(135deg, #56ab2f 0%, #a8e063 100%)',
+    icon: <MapPin className="h-6 w-6 text-white" />
   },
   {
     id: 3,
-    title: 'Hackathon Prep',
-    description: 'Prepare for an upcoming hackathon, brainstorm ideas, and strategize.',
-    color: 'linear-gradient(135deg, #FF33CC 0%, #6633FF 100%)',
-    icon: <Laptop className="h-6 w-6 text-white" />
+    title: 'Bike',
+    description: 'Cycle through scenic routes and discover hidden spots in the city.',
+    color: 'linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%)',
+    icon: <Bike className="h-6 w-6 text-white" />
   },
   {
     id: 4,
-    title: 'Workshop Session',
-    description: 'Teach each other a new tool, framework, or skill in an informal workshop.',
-    color: 'linear-gradient(135deg, #3366FF 0%, #33CCFF 100%)',
-    icon: <Settings className="h-6 w-6 text-white" />
+    title: 'Walk n talk',
+    description: 'A casual stroll with great conversation, no pressure, just vibes.',
+    color: 'linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%)',
+    icon: <Walk className="h-6 w-6 text-white" />
+  },
+  {
+    id: 5,
+    title: 'Choose your own',
+    description: 'Have something else in mind? Suggest your own activity!',
+    color: 'linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)',
+    icon: <List className="h-6 w-6 text-white" />
   }
 ];
 
